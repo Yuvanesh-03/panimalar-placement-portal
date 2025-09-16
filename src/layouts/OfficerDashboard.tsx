@@ -256,7 +256,7 @@ const OfficerDashboard: React.FC = () => {
   const unreadCount = notifications.filter(n => n.unread).length
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-screen w-full bg-gray-50 flex overflow-hidden">
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -277,9 +277,9 @@ const OfficerDashboard: React.FC = () => {
           width: sidebarCollapsed ? 80 : 280,
           transition: { duration: 0.3, ease: "easeInOut" }
         }}
-        className={`fixed left-0 top-0 h-full bg-white border-r border-gray-200 z-30 lg:relative lg:translate-x-0 ${
+        className={`fixed left-0 top-0 h-full bg-white border-r border-gray-200 z-30 lg:relative lg:translate-x-0 flex-shrink-0 flex flex-col ${
           mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:block transition-transform duration-300`}
+        } lg:flex transition-transform duration-300`}
       >
         {/* Sidebar Header */}
         <div className="p-6 border-b border-gray-200">
@@ -318,7 +318,7 @@ const OfficerDashboard: React.FC = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="p-4 space-y-2">
+        <nav className="p-4 space-y-2 flex-1 overflow-y-auto">
           {navigationItems.map((item) => (
             <motion.button
               key={item.id}
@@ -359,7 +359,7 @@ const OfficerDashboard: React.FC = () => {
 
         {/* User Profile */}
         {!sidebarCollapsed && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+          <div className="p-4 border-t border-gray-200 mt-auto">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-semibold text-sm">
@@ -385,10 +385,7 @@ const OfficerDashboard: React.FC = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex-1 lg:ml-0">
-        <div className={`transition-all duration-300 ${
-          sidebarCollapsed ? 'lg:ml-20' : 'lg:ml-[280px]'
-        }`}>
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Top Header */}
         <div className="bg-white border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
@@ -477,7 +474,7 @@ const OfficerDashboard: React.FC = () => {
         </div>
 
         {/* Content Area */}
-        <div className="p-6">
+        <div className="flex-1 overflow-y-auto p-6">
           {location.pathname === '/officer' ? (
             <div className="space-y-6">
               {/* Placement Overview Metrics */}
@@ -620,7 +617,6 @@ const OfficerDashboard: React.FC = () => {
           ) : (
             <Outlet />
           )}
-        </div>
         </div>
       </div>
     </div>
