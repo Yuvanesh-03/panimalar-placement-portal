@@ -21,6 +21,7 @@ import StudentAnalytics from '../../pages/student/Analytics'
 import Messages from '../../pages/student/Messages'
 
 // Company Pages
+import CompanyDashboardHome from '../../pages/company/Dashboard'
 import CompanyProfile from '../../pages/company/Profile'
 import PostJob from '../../pages/company/PostJob'
 import Applicants from '../../pages/company/Applicants'
@@ -161,7 +162,7 @@ const AppRouter: React.FC = () => {
             </ProtectedRoute>
           }
         >
-          <Route index element={<CompanyAnalytics />} />
+          <Route index element={<CompanyDashboardHome />} />
           <Route path="profile" element={<CompanyProfile />} />
           <Route path="post-job" element={<PostJob />} />
           <Route path="applicants" element={<Applicants />} />
