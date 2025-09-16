@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     remember: false
   })
   
-  const [showPassword, setShowPassword] = useState(false)
+  const [_showPassword, _setShowPassword] = useState(false)
 
   const handleChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }))

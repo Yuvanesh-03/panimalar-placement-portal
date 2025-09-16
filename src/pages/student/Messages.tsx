@@ -12,7 +12,8 @@ import {
   File,
   Phone,
   Video,
-  Info
+  Info,
+  MessageSquare
 } from 'lucide-react'
 import { Card, Button, Input } from '../../components/ui'
 

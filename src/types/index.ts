@@ -1,11 +1,14 @@
+import React from 'react'
+
 export interface User {
   id: string;
   email: string;
   name: string;
   role: UserRole;
   avatar?: string;
-  createdAt: string;
-  updatedAt: string;
+  profile?: any; // Profile data specific to each role
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export type UserRole = 'student' | 'company' | 'officer';

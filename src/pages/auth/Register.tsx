@@ -22,7 +22,7 @@ import type { UserRole } from '../../types'
 
 const Register: React.FC = () => {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
+  const _navigate = useNavigate()
   const { loading, error } = useAppSelector((state) => state.auth)
   
   const [currentStep, setCurrentStep] = useState(1)

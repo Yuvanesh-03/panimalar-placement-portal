@@ -173,7 +173,7 @@ const Applicants: React.FC = () => {
   const [filterStatus, setFilterStatus] = useState<string>('All')
   const [searchTerm, setSearchTerm] = useState('')
   const [sortBy, setSortBy] = useState<'name' | 'date' | 'score' | 'match'>('date')
-  const [showBulkActions, setShowBulkActions] = useState(false)
+  const [_showBulkActions, setShowBulkActions] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
 
   const statusColors = {

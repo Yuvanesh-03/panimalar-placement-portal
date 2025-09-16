@@ -29,7 +29,7 @@ import { useAppSelector } from '../../store'
 
 const StudentAnalytics: React.FC = () => {
   const { user } = useAppSelector((state) => state.auth)
-  const [timeFilter, setTimeFilter] = useState('week')
+  const [_timeFilter, _setTimeFilter] = useState('week')
   
   // Quick Stats Data
   const quickStats = [

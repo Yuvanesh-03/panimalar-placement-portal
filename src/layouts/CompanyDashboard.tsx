@@ -71,7 +71,7 @@ const CompanyDashboard: React.FC = () => {
   const { user } = useAppSelector((state) => state.auth)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [notifications, setNotifications] = useState([
+  const [notifications, _setNotifications] = useState([
     { id: 1, type: 'application', message: '20 new applications for Software Engineer', time: '5 min ago', unread: true },
     { id: 2, type: 'interview', message: 'Interview with John Doe scheduled tomorrow at 11 AM', time: '1 hour ago', unread: true },
     { id: 3, type: 'system', message: 'Monthly recruitment report is ready', time: '3 hours ago', unread: false },
